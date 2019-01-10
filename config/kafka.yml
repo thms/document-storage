@@ -1,0 +1,15 @@
+development:
+  kafka_connection: ['kafka://localhost:9092']
+  schema_registry_connection: http://localhost:8081/
+
+test:
+  kafka_connection: ['kafka://localhost:9092']
+  schema_registry_connection: http://localhost:8081/
+
+production:
+  kafka_connection: ['kafka://kafka01.example.com:9092']
+  schema_registry_connection: http://kafka01.example.com:8081/
+
+staging:
+  kafka_connection: ['kafka://kafka01.example.com:9092']
+  schema_registry_connection: http://kafka01.example.com:8081/

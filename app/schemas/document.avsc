@@ -1,0 +1,51 @@
+{
+  "name": "document",
+  "type": "record",
+  "fields": [
+    {
+      "name": "metadata",
+      "type": "metadata"
+    },
+    {
+      "name": "payload",
+      "type": {
+        "type": "record",
+        "name": "payload",
+        "fields": [
+          { "name": "id", "type": "string" },
+          { "name": "country_code", "type": "string" },
+          { "name": "subject_id", "type": "string" },
+          { "name": "subject_type", "type": "string" },
+          { "name": "category", "type": "string" },
+          { "name": "year", "type": [ "null", "int" ] },
+          { "name": "owner", "type": "string" },
+          { "name": "created_at", "type": "string" },
+          { "name": "updated_at", "type": [ "null", "string" ] },
+          { "name": "versions",
+            "type": {
+              "type": "array",
+              "items": {
+                "type": "record",
+                "name": "versions",
+                "fields": [
+                  { "name": "id", "type": "string" },
+                  { "name": "document_id", "type": "string" },
+                  { "name": "file_file_name", "type": "string" },
+                  { "name": "file_content_type", "type": "string" },
+                  { "name": "file_file_size", "type": [ "null", "int" ] },
+                  { "name": "file_updated_at", "type": [ "null", "string" ] },
+                  { "name": "file_fingerprint", "type": [ "null", "string" ] },
+                  { "name": "uploaded_by", "type": "string" },
+                  { "name": "reason", "type": "string" },
+                  { "name": "version", "type": "string" },
+                  { "name": "created_at", "type": "string" },
+                  { "name": "updated_at", "type": [ "null", "string" ] }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    } 
+  ]
+}

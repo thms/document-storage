@@ -1,0 +1,15 @@
+development:
+    bucket: document-storage-development.example.com
+    access_key_id: ACCESS_KEY_ID
+    secret_access_key: SECRET_ACCESS_KEY
+    s3_region: eu-central-1
+staging:
+    bucket: document-storage-staging.example.com
+    access_key_id: ACCESS_KEY_ID
+    secret_access_key: SECRET_ACCESS_KEY
+    s3_region: eu-central-1
+production:
+    bucket: document-storage-production.example.com
+    access_key_id: ACCESS_KEY_ID
+    secret_access_key: SECRET_ACCESS_KEY
+    s3_region: eu-central-1

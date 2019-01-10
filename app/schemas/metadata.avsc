@@ -1,0 +1,11 @@
+{
+  "name": "metadata",
+  "type": "record",
+  "fields": [
+    { "name": "published_at", "type": "string" },
+    { "name": "published_by", "type": "string" },
+    { "name": "country", "type": "string" },
+    { "name": "id", "type": "string" },
+    { "name": "tracking_id", "type": "string" }
+  ]
+}

@@ -1,0 +1,29 @@
+Need flexible meta data on documents to express:
+Can we lift this off the other document store?
+ownership
+uploader
+origination of document
+status of document (signed, draft, etc.)
+access rules / rights?
+dates
+date rangs
+years
+
+general tags:
+
+
+conceptual question
+- does the store govern the document, e.g. does it now what this is, or does the producing / consuming applciation need to know that?
+-in other words: is there more information about the docs elsewhere, and therefore distributed, is this it?
+- or is this totally dumb: just a filing cabinet without a brain.
+- what does this look like in a document centric view of the process?
+-- borrower provides documents
+-- bank provides documents
+-- underwriters create risk analysis and decision document
+-- loan contract and schedule get signed
+-- documents are pushed back and forth during collections.
+- what does it look like in a data centric view of the process?
+-- documents are just one way to capture data, but not the only way, so they are just another data set.
+-- no need to make them more special than the other data in the system.
+-- from a modelling perspective treat them just like any other piece of data
+-- treat the document store just like a database / service.

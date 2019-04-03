@@ -1,4 +1,6 @@
 # Document Storage
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fthms%2Fdocument-storage.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fthms%2Fdocument-storage?ref=badge_shield)
+
 
 ## Purpose
 Provide storage for documents, created by the system or uploaded by a user in one central location
@@ -135,3 +137,7 @@ protect index API to only allow a single object at a time, rather then the curre
 reasonable tests.
 
 http://railscasts.com/episodes/342-migrating-to-postgresql?view=asciicast
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fthms%2Fdocument-storage.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fthms%2Fdocument-storage?ref=badge_large)

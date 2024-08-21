@@ -4,7 +4,7 @@ metadata:
   name: document-storage
   annotations:
     github.com/project-slug: thms/document-storage
-    backstage.io/techdocs-ref": dir:.
+    backstage.io/techdocs-ref: dir:.
   links:
     - title: Getting Started
       url: https://github.com/thms/document-storage/README.md

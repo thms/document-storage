@@ -6,7 +6,7 @@ metadata:
     github.com/project-slug: thms/document-storage
   links:
     - title: Getting Started
-      url: https://github.com/thmd/document-storage/README.md
+      url: https://github.com/thms/document-storage/README.md
       type: Readme
       icon: github
 spec:

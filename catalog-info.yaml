@@ -4,11 +4,11 @@ metadata:
   name: document-storage
   annotations:
     github.com/project-slug: thms/document-storage
-links:
-  - title: Getting Started
-    url: https://github.com/thmd/document-storage/README.md
-    type: Readme
-    icon: github
+  links:
+    - title: Getting Started
+      url: https://github.com/thmd/document-storage/README.md
+      type: Readme
+      icon: github
 spec:
   type: microservice
   lifecycle: stable

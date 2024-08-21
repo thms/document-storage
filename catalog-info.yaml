@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: document-storage
+  annotations:
+    github.com/project-slug: thms/document-storage
+links:
+  - title: Getting Started
+    url: https://github.com/thmd/document-storage/README.md
+    type: Readme
+    icon: github
+spec:
+  type: microservice
+  lifecycle: stable
+  owner: thms

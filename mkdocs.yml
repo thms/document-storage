@@ -1,10 +1,12 @@
-site_name: Document Storage
+site_name: Document-Storage
 nav:
   - Home: 'index.md'
   - Summary: 'summary.md'
   - Readme: 'readme.md'
   - Architecture: 'architecture.md'
+  - Data Model: 'data-model.md'
 plugins:
   - techdocs-core
-  - kroki:
+  - 'kroki':
+      inline: true
       FencePrefix: ''

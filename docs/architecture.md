@@ -1,56 +1,41 @@
-## Document Storage Microservice Architecture
-
-This diagram represents a high-level architecture for the document storage microservice based on the provided codebase.
-
 ```mermaid
 graph LR
     subgraph Document Storage
-        A[API Gateway] --> B{Document Controller}
-        B --> C{Document Model}
-        B --> D{Version Controller}
-        D --> E{Version Model}
-        C --> F{Document Producer}
-        F --> G{Kafka}
-        C --> H{Version Model}
-        H --> I{Paperclip}
-        I --> J{S3 Storage}
+        A[Document API] --> B[Document Model]
+        B --> C[Version Model]
+        B --> D[Document Factory]
+        B --> E[Document Producer]
+        E --> F[Kafka]
+        C --> G[Paperclip]
+        G --> H[S3]
     end
     subgraph External Systems
-        K{Loan System} --> B
-        L{Underwriting System} --> D
+        I[Loan System] --> A
+        J[Underwriting System] --> A
     end
 ```
 
-**Components:**
+**Legend:**
 
-* **API Gateway (A):**  Handles incoming requests, authenticates users, and routes requests to the appropriate controllers.
-* **Document Controller (B):**  Manages document metadata, including creation, retrieval, and updates.
-* **Document Model (C):**  Represents a document in the database, including its attributes and relationships to versions.
-* **Version Controller (D):**  Manages document versions, including uploading new versions and retrieving specific versions.
-* **Version Model (E):**  Represents a document version in the database, including its file details and metadata.
-* **Document Producer (F):**  Publishes document events to Kafka, including creation, updates, and deletions.
-* **Kafka (G):**  A message queue used for asynchronous communication between the document storage microservice and other systems.
-* **Version Model (H):**  Used by the Version Controller to access and manage document versions.
-* **Paperclip (I):**  A library used for managing file uploads and storage.
-* **S3 Storage (J):**  The cloud storage service used to store document files.
-* **Loan System (K):**  An external system that interacts with the document storage microservice to store documents related to loans.
-* **Underwriting System (L):**  An external system that interacts with the document storage microservice to upload and retrieve document versions.
+* **Document Storage:** This represents the core microservice responsible for managing documents and their versions.
+* **Document API:** This is the RESTful API that exposes endpoints for creating, retrieving, updating, and deleting documents and versions.
+* **Document Model:** This is the Ruby model representing a document, which includes attributes like subject ID, subject type, category, year, country code, and owner.
+* **Version Model:** This is the Ruby model representing a version of a document, which includes attributes like file, file fingerprint, uploaded by, reason, and version.
+* **Document Factory:** This is a utility class responsible for creating new documents and their initial versions.
+* **Document Producer:** This is a class responsible for publishing document events to Kafka.
+* **Kafka:** This is the message queue used for asynchronous communication between the Document Storage microservice and other systems.
+* **Paperclip:** This is a Ruby gem used for managing file uploads and storage.
+* **S3:** This is the cloud storage service used for storing document files.
+* **Loan System:** This is an external system that interacts with the Document Storage microservice to store documents related to loans.
+* **Underwriting System:** This is an external system that interacts with the Document Storage microservice to access and update document versions.
 
-**Key Interactions:**
+**Explanation:**
 
-* The API Gateway receives requests from external systems and routes them to the appropriate controllers.
-* The Document Controller interacts with the Document Model to manage document metadata.
-* The Version Controller interacts with the Version Model to manage document versions.
-* The Document Producer publishes document events to Kafka, which are consumed by other systems.
-* Paperclip handles file uploads and storage in S3.
-* External systems like the Loan System and Underwriting System interact with the document storage microservice through the API Gateway.
+* The Document API provides a RESTful interface for external systems to interact with the Document Storage microservice.
+* The Document Model and Version Model represent the core data structures for documents and their versions.
+* The Document Factory simplifies the creation of new documents and versions.
+* The Document Producer publishes document events to Kafka, enabling asynchronous communication with other systems.
+* Paperclip handles file uploads and storage, leveraging S3 for persistent storage.
+* External systems like the Loan System and Underwriting System interact with the Document API to manage documents and versions.
 
-**Notes:**
-
-* This diagram represents a simplified view of the architecture. The actual implementation may involve additional components and interactions.
-* The codebase uses Avro for data serialization and schema registry for schema management.
-* The document storage microservice uses a database (likely PostgreSQL) to store document and version data.
-* The microservice is deployed using Capistrano and uses Thin as the web server.
-* The codebase includes extensive unit and integration tests.
-
-This architecture diagram provides a high-level overview of the document storage microservice and its interactions with external systems. It highlights the key components and interactions involved in managing document metadata and files. 
+This architecture diagram provides a high-level overview of the Document Storage microservice and its interactions with external systems. It highlights the key components and their relationships, providing a foundation for understanding the codebase.

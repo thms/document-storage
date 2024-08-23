@@ -6,3 +6,5 @@ nav:
   - Architecture: 'architecture.md'
 plugins:
   - techdocs-core
+  - kroki:
+      FencePrefix: ''

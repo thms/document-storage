@@ -2,7 +2,7 @@
 
 This diagram represents a high-level architecture for the document storage microservice based on the provided codebase.
 
-```mermaid
+```kroki-mermaid
 graph LR
     subgraph Document Storage
         A[API Gateway] --> B{Document Controller}

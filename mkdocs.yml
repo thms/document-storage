@@ -5,6 +5,8 @@ nav:
   - Readme: 'readme.md'
   - Architecture: 'architecture.md'
   - Data Model: 'data-model.md'
+  - Business Capabilities: 'business-capabilities.md'
+  - Technical Capabilities: 'technical-capabilities.md'
 plugins:
   - techdocs-core
   - 'kroki':

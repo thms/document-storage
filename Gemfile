@@ -60,7 +60,7 @@ gem 'logstasher'
 
 # Kafka Support
 gem 'ruby-kafka'
-gem 'avro_turf'
+gem 'avro_turf', '>= 0.8.1'
 
 # Daeomons:
 gem 'daemons-rails'
